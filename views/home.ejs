@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio - Visualizador Rotor</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- Model Viewer -->
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #1a1a1a;
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        header {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 10;
+            background: rgba(0,0,0,0.5);
+            padding: 15px;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            margin: 0;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+        
+        nav a {
+            color: #aaa;
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-top: 8px;
+            display: inline-block;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #fff;
+        }
+
+        model-viewer {
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, #2b2b2b, #1a1a1a);
+            --poster-color: transparent;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Rotor 3D con Model Viewer</h1>
+        <nav>
+            <a href="/rotor">Cambiar a Vista Three.js &rarr;</a>
+        </nav>
+    </header>
+
+    <model-viewer 
+        src="/rotor.glb" 
+        camera-controls 
+        auto-rotate 
+        shadow-intensity="1"
+        environment-image="neutral"
+        exposure="1"
+        interaction-prompt="auto"
+        ar
+        alt="A 3D model of a rotor">
+    </model-viewer>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rotor 3D</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background: radial-gradient(circle at center, #2b2b2b, #1a1a1a);
+            font-family: 'Inter', sans-serif;
+            color: white;
+        }
+        #canvas-container {
+            width: 100vw;
+            height: 100vh;
+        }
+        header {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 10;
+            background: rgba(0,0,0,0.5);
+            padding: 15px;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+            pointer-events: auto; /* Ensure clickable over canvas */
+        }
+        h1 {
+            font-size: 1.5rem;
+            margin: 0;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+        nav a {
+            color: #aaa;
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-top: 8px;
+            display: inline-block;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: #fff;
+        }
+    </style>
+    <!-- Import Map for convenience, matching the server static config -->
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "/build/three.module.js",
+                "three/addons/": "/jsm/"
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Modelo Rotor en Three.js</h1>
+        <nav>
+            <a href="/">&larr; Volver al Visualizador</a>
+        </nav>
+    </header>
+    <div id="canvas-container"></div>
+    <script type="module" src="/js/rotor.js"></script>
+</body>
+</html>
