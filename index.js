@@ -7,6 +7,7 @@ app.use(express.static("public"));
 app.use("/build", express.static("node_modules/three/build"));
 app.use("/jsm", express.static("node_modules/three/examples/jsm"));
 app.use(routes);
-app.listen(3050, () => {
-    console.log("Server started on port http://localhost:3050");
+const port = process.env.PORT || 3050;
+app.listen(port, () => {
+    console.log(`Server started on port http://localhost:${port}`);
 });
